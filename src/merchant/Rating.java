@@ -7,10 +7,8 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
-import java.util.Map;
 import java.util.Map.Entry;
 import java.util.concurrent.TimeUnit;
 
@@ -33,7 +31,7 @@ public class Rating
 		String line=br.readLine();
 				
 		while((line=br.readLine()) != null)
-		{		
+		{			
 			itr++;
 			String [] currentTransaction=line.split(",");
 			int create, fulfill;
@@ -372,6 +370,7 @@ public class Rating
 						out.println("transcation= "+t4.getValue().transactionRating+" profit= "+t4.getValue().profitRating+" cancel= "+t4.getValue().cancelRating+" total= "+t4.getValue().totalRating);
 						rate += t4.getValue().totalRating;
 					}
+					out.println();
 				}
 			}
 			finalRating.put(key1, rate);
@@ -389,12 +388,16 @@ public class Rating
 	}
 	public static void main(String args[]) throws IOException
 	{
+		if(args.length != 5)
+		{
+			System.out.println("Incorrect number of arguments passed...Please try again...");
+			return;
+		}
 		Rating rating=new Rating();
-		rating.readTransaction(args[0]);
 		
+		rating.readTransaction(args[0]);		
 		rating.readProfits(args[1]);
-		rating.readCancellations(args[2]);
-				
+		rating.readCancellations(args[2]);				
 		rating.mergeData();
 		rating.printResults(args[3]);
 		rating.printMerchantRating(args[4]);

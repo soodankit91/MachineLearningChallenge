@@ -1,0 +1,37 @@
+This provides guidelines for using the source code for the solution of Machine Learning Challenge for Paytm labs
+
+Rating.java contains the main method
+
+
+The solution requires 5 arguments to be passed.
+
+1st - path to the transactions dataset 		       : Input File
+2nd - path to the profits dataset  		       : Input File
+3rd - path to the cancellations data set	       : Input File
+4th - path to a file where we want the merchant rating as per different categories : Output File
+5th - path to a file where we want the merchant rating (final result) : Output File
+
+A note regarding the output files:
+
+1.the first output file (4th argument) shows merchant rating at category and sub category level, that is, rating for all
+merchants for every T1, T2 and T4 the merchant deals with.
+
+2.the second output file (5th argument) shows the total merchant rating.
+
+
+
+Results:
+
+Two results files have been attached
+
+1. MerchantRatingCategorywise.txt : Corresponds to input argument 4 - contains rating at category and sub category level
+2. MerchantRatingTotal.txt : Corresponds to input argument 5 - contains overall rating of merchants
+
+
+Submitted By:
+
+Ankit K. Sood
+M.E (Software Systems),
+BITS Pilani.
+Intern,
+HERE Maps, Mumbai.
